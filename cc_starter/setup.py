@@ -8,11 +8,13 @@ with open(os.path.join(here, 'README.txt')) as f:
 with open(os.path.join(here, 'CHANGES.txt')) as f:
     CHANGES = f.read()
 
+dev_requires = [
+    'pyramid_debugtoolbar',
+]
 requires = [
     'plaster_pastedeploy',
     'pyramid',
     'pyramid_jinja2',
-    'pyramid_debugtoolbar',
     'waitress',
 ]
 
@@ -42,6 +44,7 @@ setup(
     zip_safe=False,
     extras_require={
         'testing': tests_require,
+        'dev': dev_requires,
     },
     install_requires=requires,
     entry_points={
